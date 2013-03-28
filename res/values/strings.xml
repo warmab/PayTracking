@@ -9,8 +9,20 @@
     <string name="txtViewPay">You pay $1,600 montly</string>
     <string name="btnDetails">See more details</string>
     <string name="action_settings">Settings</string>
-    
-    <!-- Detail Activity Strings -->
-    <string name="title_activity_detail">Payments Details</string>        
+    <string name="title_activity_detail">Payments Details</string>
 
+    <!-- Detail Activity Strings -->
+    <string name="btnAddPayment">Add new Payment</string>
+    <string name="title_activity_add">AddActivity</string>
+    <string name="hello_world">Hello world!</string>
+
+    <!-- Add Activity -->
+    
+    <string name="MainTitlePayment">Add new Payment</string>
+    <string name="MainTitleIncome">Add new Income</string>
+    <string name="lblSubject">Subject</string>
+    <string name="lblAmount">Amount</string>
+    <string name="lblPaymentDate">Payment date</string>
+    <string name="btnOk">Add</string>
+    <string name="btnCancel">Cancel</string>
 </resources>

@@ -38,6 +38,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.balusoft.paytracking.MainActivity" />
         </activity>
+        <activity
+            android:name="com.balusoft.paytracking.AddActivity"
+            android:label="@string/title_activity_add"
+            android:theme="@style/ModalDialog" >
+        </activity>
     </application>
 
 </manifest>

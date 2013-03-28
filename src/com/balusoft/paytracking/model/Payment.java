@@ -5,15 +5,13 @@ public class Payment {
 
 	
 	/**
-	 * 
-	 * @param id
+	 * 	 
 	 * @param subject
 	 * @param amount
 	 * @param paymentDate
 	 */
-	public Payment(int id,String subject, int amount, String paymentDate) {
-		super();
-		this.id=id;
+	public Payment(String subject, int amount, String paymentDate) {
+		super();		
 		this.subject = subject;
 		this.amount = amount;
 		this.paymentDate = paymentDate;
@@ -28,23 +26,8 @@ public class Payment {
 
 
 	private String subject,paymentDate;
-	private int id,amount;
-	
-	/**
-	 * 
-	 * @return
-	 */
-	public int getId() {
-		return id;
-	}
+	private int amount;
 
-	/**
-	 * 
-	 * @param id
-	 */
-	public void setId(int id) {
-		this.id = id;
-	}
 	/**
 	 * 
 	 * @return
@@ -91,7 +74,7 @@ public class Payment {
 	@Override
 	public String toString() {
 		return "Payment [subject=" + subject + ", paymentDate=" + paymentDate
-				+ ", id=" + id + ", amount=" + amount + "]";
+				+ ", amount=" + amount + "]";
 	}
 	
 	

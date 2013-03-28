@@ -1,6 +1,8 @@
 package com.balusoft.paytracking.data;
 
 import java.util.ArrayList;
+import java.util.UUID;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import com.balusoft.paytracking.model.Payment;
 
@@ -38,7 +40,9 @@ public class PaymentData {
 		Log.d(TAG, "insertPayment");
 		ContentValues values= new ContentValues();
 		
-		values.put(PaymentContract.PaymentColumns._ID, newPayment.getId());
+		UUID uuid = UUID.randomUUID();
+		
+		values.put(PaymentContract.PaymentColumns._ID, uuid.toString());
 		values.put(PaymentContract.PaymentColumns.SUBJECT,newPayment.getSubject());
 		values.put(PaymentContract.PaymentColumns.AMOUNT,newPayment.getAmount());
 		values.put(PaymentContract.PaymentColumns.PAYMENT_DATE,newPayment.getPaymentDate());
@@ -55,14 +59,13 @@ public class PaymentData {
 		try {
 			cursor=db.query(PaymentContract.TABLE, null, null, null, null, null, null);
 			String subject,paymentDate;
-			int amount,id;
-			while (cursor.moveToNext()) {
-				id=cursor.getInt(cursor.getColumnIndex(PaymentContract.PaymentColumns._ID));
+			int amount;
+			while (cursor.moveToNext()) {				
 				subject=cursor.getString(cursor.getColumnIndex(PaymentContract.PaymentColumns.SUBJECT));
-				paymentDate=cursor.getString(cursor.getColumnIndex(PaymentContract.PaymentColumns.AMOUNT));
-				amount=cursor.getInt(cursor.getColumnIndex(PaymentContract.PaymentColumns.PAYMENT_DATE));
+				paymentDate=cursor.getString(cursor.getColumnIndex(PaymentContract.PaymentColumns.PAYMENT_DATE));
+				amount=cursor.getInt(cursor.getColumnIndex(PaymentContract.PaymentColumns.AMOUNT));
 				
-				Payment payment=new Payment(id, subject, amount, paymentDate);
+				Payment payment=new Payment(subject, amount, paymentDate);
 				
 				newList.add(payment);
 				

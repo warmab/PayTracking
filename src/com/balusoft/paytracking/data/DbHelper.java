@@ -26,24 +26,25 @@ public class DbHelper extends SQLiteOpenHelper {
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		// TODO Auto-generated method stub
-		
-		String sql=String.format("create table %s (%s int primary key, %s text, %s text,%s text",
+		Log.d(TAG,"onCreate DbHelper");
+		String sql=String.format("create table %s (%s text primary key, %s text, %s text,%s text)",
 				PaymentContract.TABLE,
 				PaymentContract.PaymentColumns._ID,
 				PaymentContract.PaymentColumns.SUBJECT,
 				PaymentContract.PaymentColumns.AMOUNT,
-				PaymentContract.PaymentColumns.SUBJECT);
+				PaymentContract.PaymentColumns.PAYMENT_DATE);
+		
+		db.execSQL(sql);
+		Log.d(TAG,"Executed sql: "+sql);
+		sql=String.format("create table %s (%s text primary key,%s text, %s text)",
+				IncomesContract.TABLE,
+				IncomesContract.IncomesColumns._ID,
+				IncomesContract.IncomesColumns.AMOUNT,
+				IncomesContract.IncomesColumns.DATE);
 		
 		db.execSQL(sql);
 		
-		sql=String.format("create table %s (%s int primary key,%s text, %s text",
-				IncomesContract.TABE,
-				IncomesContract.IncomesColumns.Amount,
-				IncomesContract.IncomesColumns.Date);
-		
-		db.execSQL(sql);
-		
-		Log.d(TAG,"onCreated sql: "+sql);
+		Log.d(TAG,"Executed sql: "+sql);
 	}
 
 	/**
@@ -57,7 +58,7 @@ public class DbHelper extends SQLiteOpenHelper {
 		
 		db.execSQL("drop table if exists "+PaymentContract.TABLE); // drops the old database
 		
-		db.execSQL("drop table if exists "+IncomesContract.TABE);
+		db.execSQL("drop table if exists "+IncomesContract.TABLE);
 		
 		Log.d(TAG,"onUpdated");
 		

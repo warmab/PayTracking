@@ -8,4 +8,10 @@
         <!-- API 11 theme customizations can go here. -->
     </style>
 
+    
+   <!-- Add Dialog -->
+	<style name="ModalDialog" parent="android:Theme.Holo.Light.Dialog">
+	    
+	</style>
+	    
 </resources>

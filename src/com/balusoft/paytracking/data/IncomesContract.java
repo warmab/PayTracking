@@ -11,7 +11,7 @@ import android.provider.BaseColumns;
 public class IncomesContract extends BaseContract {
 
 	public static final Uri CONTENT_URI=Uri.parse(String.format("content://%s/incomes",AUTHORITY));	
-	public static final String TABE="incomes";
+	public static final String TABLE="incomes";
 	
 	/**
 	 * 
@@ -19,8 +19,8 @@ public class IncomesContract extends BaseContract {
 	 *
 	 */
 	public static final class IncomesColumns implements BaseColumns{
-		public static final String Amount="amount";
-		public static final String Date="date";
+		public static final String AMOUNT="amount";
+		public static final String DATE="date";
 	}
 	
 }

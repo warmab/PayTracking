@@ -2,6 +2,7 @@ package com.balusoft.paytracking;
 
 import java.util.ArrayList;
 
+import com.balusoft.paytracking.common.Util;
 import com.balusoft.paytracking.data.PaymentAdapter;
 import com.balusoft.paytracking.data.PaymentData;
 import com.balusoft.paytracking.model.Payment;
@@ -16,6 +17,7 @@ import android.view.View.OnClickListener;
 import android.widget.ListView;
 import android.support.v4.app.NavUtils;
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.os.Build;
 
 public class DetailActivity extends Activity {
@@ -41,7 +43,7 @@ public class DetailActivity extends Activity {
 		PaymentData paymentData = new PaymentData(this);
 		ArrayList<Payment> payments =  paymentData.getPayments();		
 		PaymentAdapter adapter = new PaymentAdapter(this, R.layout.payment_row, payments.toArray(new Payment[payments.size()]));				
-		listPayments.setAdapter(adapter);		
+		listPayments.setAdapter(adapter);	
 	}
 
 	/**
@@ -77,5 +79,14 @@ public class DetailActivity extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
-
+	
+	/**
+	 * 
+	 * @param v
+	 */
+	public void btnPayment_Click(View v){
+		Intent activityIntent=new Intent(getApplicationContext(),AddActivity.class);
+		activityIntent.putExtra(Util.AddIntents.EXTRA_ADD, Util.AddIntents.AddTask.AddPayment);
+		startActivity(activityIntent);
+	}
 }
