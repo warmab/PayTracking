@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Pay Tracking</string>
+
+    <!-- Main Activity Strings -->
+    <string name="txtViewTitle">Resume</string>
+    <string name="txtViewEarn">You earn $10,500 montly</string>
+    <string name="txtViewPay">You pay $1,600 montly</string>
+    <string name="btnDetails">See more details</string>
+    <string name="action_settings">Settings</string>
+    
+    <!-- Detail Activity Strings -->
+    <string name="title_activity_detail">Payments Details</string>        
+
+</resources>

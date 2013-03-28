@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.balusoft.paytracking"
+    android:versionCode="1"
+    android:versionName="0.1.0.1" >
+
+    <uses-sdk
+        android:minSdkVersion="9"
+        android:targetSdkVersion="17" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/pay_logo"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.balusoft.paytracking.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.balusoft.paytracking.DetailActivity"
+            android:label="@string/title_activity_detail"
+            android:parentActivityName="com.balusoft.paytracking.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.balusoft.paytracking.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.balusoft.paytracking.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName="com.balusoft.paytracking.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.balusoft.paytracking.MainActivity" />
+        </activity>
+    </application>
+
+</manifest>
