@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
@@ -18,7 +18,9 @@
     </style>
     
    <!-- Add Dialog -->
-	<style name="ModalDialog" parent="android:Theme.Dialog">
-	    
+	<style name="ModalDialog" parent="android:Theme.Dialog">	          
 	</style>
+	
+	<!-- Current money Dialog -->	
+	<color name="moneyDialogTextColor">#fff</color>
 </resources>

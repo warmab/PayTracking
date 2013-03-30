@@ -13,4 +13,7 @@
 	<style name="ModalDialog" parent="android:Theme.Holo.Light.Dialog">
 	    
 	</style>
+	
+	<!-- Current money Dialog -->
+	<color name="moneyDialogTextColor">#000</color>	
 </resources>

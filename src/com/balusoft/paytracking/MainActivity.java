@@ -59,7 +59,10 @@ public class MainActivity extends Activity {
 
 					EditText txtAddCurrentMoney=(EditText)dialogView.findViewById(R.id.txtAddCurrentMoney);
 					ManageUtil tempManage= new ManageUtil(getApplicationContext());
-					tempManage.setCurrentMoney(txtAddCurrentMoney.getText().toString());								
+					tempManage.setCurrentMoney(txtAddCurrentMoney.getText().toString());
+					
+					String currentMoneyTitle=String.format(getString(R.string.txtViewCurrentMoney), txtAddCurrentMoney.getText().toString());
+					txtViewCurrentMoney.setText(currentMoneyTitle);					
 				}
 			});
         	

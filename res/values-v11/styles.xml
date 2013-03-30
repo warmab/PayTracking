@@ -14,4 +14,6 @@
 	    
 	</style>
 	    
+	<!-- Current money Dialog -->
+	<color name="moneyDialogTextColor">#000</color>	
 </resources>
