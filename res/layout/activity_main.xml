@@ -12,13 +12,22 @@
     tools:context=".MainActivity" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/textViewTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/textlines"
         android:paddingBottom="5dp"
         android:text="@string/txtViewTitle"
         android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/txtViewCurrentMoney"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txtViewCurrentMoney"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:paddingLeft="10dp" 
+        android:layout_marginTop="10dp"/>
 
     <TextView
         android:id="@+id/txtViewEarn"
@@ -33,19 +42,24 @@
         android:id="@+id/txtViewPay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="25dp"
         android:paddingLeft="10dp"
         android:paddingTop="10dp"
         android:text="@string/txtViewPay"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:background="@drawable/textlines" />
 
     <Button
         android:id="@+id/btnDetails"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/btnDetails"
-        android:onClick="btnDetail_OnClick" />
+        android:onClick="btnDetail_OnClick" 
+        android:layout_marginTop="25dp"/>
 
-
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btnSeePayments" />
 
 </LinearLayout>

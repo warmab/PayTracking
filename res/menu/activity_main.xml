@@ -1,9 +1,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
     
-    <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="@string/action_settings"/>
+    
+    <item android:id="@+id/manage_money" android:title="@string/settings_consume_money" android:menuCategory="container">
+        <menu>
+            <item android:id="@+id/action_add_payment" android:title="@string/action_add_payment"/>
+            <item android:id="@+id/action_add_money" android:title="@string/action_add_money"/>
+        </menu>
+    </item><item android:id="@+id/action_settings" android:orderInCategory="100" android:showAsAction="never" android:title="@string/action_settings" />
+    
 
 </menu>
