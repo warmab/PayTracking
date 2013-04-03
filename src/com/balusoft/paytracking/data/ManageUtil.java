@@ -10,8 +10,7 @@ public class ManageUtil {
 		this.currentContext = currentContext;
 	}
 
-	private Context currentContext;
-	private String TAG=ManageUtil.class.getSimpleName();
+	private Context currentContext;	
 	private final String MANAGE_STORAGE_ID="com.balusoft.paytracking.ManageUtil.STORAGE";
 	private String payments;
 
