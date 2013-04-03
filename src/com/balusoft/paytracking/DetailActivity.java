@@ -2,22 +2,22 @@ package com.balusoft.paytracking;
 
 import java.util.ArrayList;
 
-import com.balusoft.paytracking.common.Util;
 import com.balusoft.paytracking.data.PaymentAdapter;
 import com.balusoft.paytracking.data.PaymentData;
 import com.balusoft.paytracking.model.Payment;
 
 import android.os.Bundle;
 import android.app.Activity;
-import android.util.Log;
+import android.app.AlertDialog;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.support.v4.app.NavUtils;
 import android.annotation.TargetApi;
-import android.content.Intent;
+import android.content.DialogInterface;
 import android.os.Build;
 
 public class DetailActivity extends Activity {
@@ -37,7 +37,6 @@ public class DetailActivity extends Activity {
 	
 	@Override
 	protected void onResume() {
-		// TODO Auto-generated method stub
 		super.onResume();
 		
 		PaymentData paymentData = new PaymentData(this);
@@ -85,8 +84,38 @@ public class DetailActivity extends Activity {
 	 * @param v
 	 */
 	public void btnPayment_Click(View v){
-		Intent activityIntent=new Intent(getApplicationContext(),AddActivity.class);
-		activityIntent.putExtra(Util.AddIntents.EXTRA_ADD, Util.AddIntents.AddTask.AddPayment);
-		startActivity(activityIntent);
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		LayoutInflater inflater= this.getLayoutInflater();
+		
+		final View dialogView= inflater.inflate(R.layout.dialog_add_new_payment,null);
+		builder.setView(dialogView)
+		.setPositiveButton(getString(R.string.btnOk), new DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {				
+				TextView txtSubject=(TextView)dialogView.findViewById(R.id.txtSubject);
+				TextView txtAmount=(TextView)dialogView.findViewById(R.id.txtAmount);				
+				
+				Payment newPayment= new Payment(txtSubject.getText().toString(),
+						Integer.parseInt(txtAmount.getText().toString()),
+						"-");
+				PaymentData paymentData = new PaymentData(getApplicationContext());
+				paymentData.insertPayment(newPayment);		
+				
+				DetailActivity.this.onResume();
+			}
+		})
+		.setNegativeButton(getString(R.string.btnCancel), new DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+			 	
+			}
+		});
+		
+		AlertDialog dialog= builder.create();
+		dialog.setTitle(getString(R.string.MainTitlePayment));
+		dialog.show();
+		
 	}
 }

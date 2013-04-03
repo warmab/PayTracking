@@ -13,9 +13,10 @@ public class ManageUtil {
 	private Context currentContext;
 	private String TAG=ManageUtil.class.getSimpleName();
 	private final String MANAGE_STORAGE_ID="com.balusoft.paytracking.ManageUtil.STORAGE";
-	private String currentMoney,earn,payments;
+	private String payments;
 
 	public static final String C_CURRENT_MONEY="CurrentMoney";
+	public static final String C_EARN_MONEY="EarnMoney";
 	
 	/**
 	 * 
@@ -33,12 +34,20 @@ public class ManageUtil {
 		setStoredValue(ManageUtil.C_CURRENT_MONEY, currentMoney);		
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public String getEarn() {
-		return earn;
+		return getStoredValue(ManageUtil.C_EARN_MONEY,"-1");
 	}
 
+	/**
+	 * 
+	 * @param earn
+	 */
 	public void setEarn(String earn) {
-		this.earn = earn;
+		setStoredValue(ManageUtil.C_EARN_MONEY, earn);
 	}
 
 	public String getPayments() {
@@ -47,6 +56,10 @@ public class ManageUtil {
 
 	public void setPayments(String payments) {
 		this.payments = payments;
+	}
+	
+	public void addMoney(int money){
+		this.setCurrentMoney(""+(Integer.parseInt(this.getCurrentMoney())+money));
 	}
 	
 	/**

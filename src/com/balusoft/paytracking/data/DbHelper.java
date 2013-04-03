@@ -35,14 +35,15 @@ public class DbHelper extends SQLiteOpenHelper {
 				PaymentContract.PaymentColumns.PAYMENT_DATE);
 		
 		db.execSQL(sql);
-		Log.d(TAG,"Executed sql: "+sql);
-		sql=String.format("create table %s (%s text primary key,%s text, %s text)",
-				IncomesContract.TABLE,
-				IncomesContract.IncomesColumns._ID,
-				IncomesContract.IncomesColumns.AMOUNT,
-				IncomesContract.IncomesColumns.DATE);
 		
-		db.execSQL(sql);
+		sql=String.format("create table %s (%s text primary key, %s text, %s text,%s text)",
+				ToPayContract.TABLE,
+				ToPayContract.ToPayColumns._ID,
+				ToPayContract.ToPayColumns.SUBJECT,
+				ToPayContract.ToPayColumns.AMOUNT,
+				ToPayContract.ToPayColumns.PAYMENT_DATE);
+		
+		db.execSQL(sql);		
 		
 		Log.d(TAG,"Executed sql: "+sql);
 	}
@@ -56,9 +57,7 @@ public class DbHelper extends SQLiteOpenHelper {
 		// Typically do ALTER TABLE statements, but... we're just in development
 		// so:
 		
-		db.execSQL("drop table if exists "+PaymentContract.TABLE); // drops the old database
-		
-		db.execSQL("drop table if exists "+IncomesContract.TABLE);
+		db.execSQL("drop table if exists "+PaymentContract.TABLE); // drops the old database			
 		
 		Log.d(TAG,"onUpdated");
 		

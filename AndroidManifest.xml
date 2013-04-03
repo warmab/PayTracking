@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.balusoft.paytracking"
     android:versionCode="1"
-    android:versionName="0.1.0.1" >
+    android:versionName="0.2.0.4" >
 
     <uses-sdk
         android:minSdkVersion="9"
@@ -39,9 +39,12 @@
                 android:value="com.balusoft.paytracking.MainActivity" />
         </activity>
         <activity
-            android:name="com.balusoft.paytracking.AddActivity"
-            android:label="@string/title_activity_add"
-            android:theme="@style/ModalDialog" >
+            android:name="com.balusoft.paytracking.SpentMoneyActivity"
+            android:label="@string/title_activity_spent_money"
+            android:parentActivityName="com.balusoft.paytracking.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.balusoft.paytracking.MainActivity" />            
         </activity>
     </application>
 

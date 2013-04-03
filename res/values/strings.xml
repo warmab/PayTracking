@@ -8,29 +8,42 @@
     <string name="txtViewEarn">You earn $%s montly</string>
     <string name="txtViewPay">You pay $%s montly</string>
     <string name="txtViewCurrentMoney">Current Money: $%s</string>
-    <string name="btnDetails">See more details</string>
+    <string name="btnDetails">Payments per Month</string>
     <string name="action_settings">Settings</string>
     <string name="settings_consume_money">Manage your Money</string>
-    <string name="action_add_payment">I spend money</string>
-    <string name="action_add_money">I earn money</string>
-    <string name="title_activity_detail">Payments Details</string>
-    <string name="btnSeePayments">See payments</string>
+    <string name="action_add_payment">I spent money</string>
+    <string name="action_add_money">I earned money</string>
+    <string name="title_activity_detail">Payments per Month</string>
+    <string name="btnSeePayments">How I spent my Money</string>
 
     <!-- Detail Activity Strings -->
     <string name="btnAddPayment">Add new Payment</string>
     <string name="title_activity_add">AddActivity</string>
     <string name="hello_world">Hello world!</string>
 
-    <!-- Add Activity -->
-    
+    <!-- dialog_add_new_payment Dialog -->
+
     <string name="MainTitlePayment">Add new Payment</string>
     <string name="MainTitleIncome">Add new Income</string>
     <string name="lblSubject">Subject</string>
     <string name="lblAmount">Amount</string>
-    <string name="lblPaymentDate">Payment date</string>
-    <string name="btnOk">Add</string>
+    <string name="lblPaymentDate">Day when you pay</string>
+    <string name="btnOk">Add :)</string>
     <string name="btnCancel">Cancel</string>
-    
+    <string name="btnRemove">OK :(</string>
+    <string name="txtPlaceHolderSubject">For example: Walmart - LED TV</string>
+    <string name="TitleResume">Add a payment that you pay montly</string>
+
     <!-- current_money_dialog -->
-    <string name="current_money_dialog_content" >Welcome to Pay Tracking, \n\n Please provide your current money, Pay Tracking is going to help you to keep track of all your money</string>
+    <string name="current_money_dialog_content">Welcome to Pay Tracking, \n\n Please provide your current money, Pay Tracking is going to help you to keep track of all your money</string>
+
+    <!-- dialog_add_more_money Dialog -->
+    <string name="txtPlaceHolderMoreMoney">Money that you earned</string>
+    <string name="titleAddMoreMoney">I earned more money :)</string>
+
+    <!-- add_new_to_pay Dialog -->
+    <string name="txtPlaceHolderRemoveMoney">Money that you spent</string>
+    <string name="titleRemoveMoney">I spent money :(</string>
+    <string name="title_activity_spent_money">SpentMoneyActivity</string>
+
 </resources>

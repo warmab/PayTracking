@@ -2,10 +2,7 @@ package com.balusoft.paytracking.data;
 
 import java.util.ArrayList;
 import java.util.UUID;
-import java.util.concurrent.atomic.AtomicInteger;
-
 import com.balusoft.paytracking.model.Payment;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -20,16 +17,14 @@ import android.util.Log;
 public class PaymentData {
 
 	private static final String TAG = PaymentData.class.getSimpleName();
-	private DbHelper dbHelper;
-	private Context context;
+	private DbHelper dbHelper;	
 	
 	/**
 	 * 
 	 * @param context
 	 */
 	public PaymentData(Context context) {
-		this.dbHelper = new DbHelper(context);
-		this.context=context;
+		this.dbHelper = new DbHelper(context);		
 	}
 
 	/**

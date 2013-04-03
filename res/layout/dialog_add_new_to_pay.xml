@@ -1,0 +1,56 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+    <TextView
+        android:id="@+id/textViewSpentSubject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/lblSubject"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/moneyDialogTextColor" />
+
+    <EditText
+        android:id="@+id/txtSpentSubject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textViewSpentSubject"
+        android:ems="10"
+        android:hint="@string/txtPlaceHolderSubject" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/textViewSpentAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/txtSpentSubject"
+        android:text="@string/lblAmount"
+        android:textAppearance="?android:attr/textAppearanceMedium" 
+        android:textColor="@color/moneyDialogTextColor"/>
+
+    <EditText
+        android:id="@+id/txtSpentAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textViewSpentAmount"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="@string/txtPlaceHolderRemoveMoney" />
+
+</RelativeLayout>
